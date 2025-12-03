@@ -1,4 +1,4 @@
-* Example For practice
+//Example For practice
 
 @AbapCatalog.sqlViewName:'ZMATVIEWS'
 @EndUserText.label: 'Material List'
