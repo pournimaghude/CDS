@@ -1,10 +1,9 @@
 //Example 1
 
 @AbapCatalog.sqlViewName: 'ZMATVIEWS'
-@EndUserText.label: 'Material List'
+@EndUserText.label: 'Material Info'
 
-define view Z_MAT_INFOS
-  as select from makt
+define view Z_MAT_INFOS as select from makt
 {
   key matnr,
       maktx,
