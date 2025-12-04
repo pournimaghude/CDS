@@ -23,3 +23,18 @@ define view Z_MAT_INFO as select from mara
       meins,
       ersda
 }
+
+//Example 3 
+
+@AbapCatalog.sqlViewName: 'ZMATVIEW'
+@EndUserText.label: 'Material Type FERT'
+
+define view Z_MAT_FERT as
+  select from mara
+{
+  key matnr,
+      mtart,
+      meins
+}
+where mtart = 'FERT'
+  and meins = 'EA'
