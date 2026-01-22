@@ -35,11 +35,21 @@ TYPES: BEGIN OF ty_material,
 ``` abap
 DATA(ls_material) = VALUE ty_material( ).
 ```
+#### Step 3️⃣ Assign values using modern syntax
+``` abap
+ls_material = VALUE ty_material(
+  matnr = 'MAT1001'
+  mtart = 'FERT'
+  erdat = sy-datum
+).
+```
 
+#### OR Steps 2️⃣ + 3️⃣ together (Modern Syntax) 
 ``` abap
 DATA(ls_material) = VALUE ty_material(
   matnr = 'MAT1001'
   mtart = 'FERT'
   erdat = sy-datum
 ).
+
 ```
