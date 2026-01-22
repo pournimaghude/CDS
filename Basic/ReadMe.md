@@ -23,8 +23,23 @@ currency and decimal calculations, and string is a dynamic type used for long te
   
 ### Exercise
 #### Step 1️⃣ Create a structure type for Material
-''' *TYPES: BEGIN OF ty_material,
+``` abap
+TYPES: BEGIN OF ty_material,
          matnr TYPE matnr,
          mtart TYPE mtart,
          erdat TYPE erdat,
        END OF ty_material.
+ ```
+
+#### Step 2️⃣ Declare a variable using that structure
+``` abap
+DATA(ls_material) = VALUE ty_material( ).
+```
+
+``` abap
+DATA(ls_material) = VALUE ty_material(
+  matnr = 'MAT1001'
+  mtart = 'FERT'
+  erdat = sy-datum
+).
+```
