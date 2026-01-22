@@ -51,5 +51,16 @@ DATA(ls_material) = VALUE ty_material(
   mtart = 'FERT'
   erdat = sy-datum
 ).
-
 ```
+
+#### 1) When do you use TYPES instead of DATA?
+- I use TYPES when I want to define a reusable data structure or type without allocating memory.
+- It is mainly used as a blueprint for structures or internal tables.
+- DATA is used when I need an actual variable to store values at runtime.
+- TYPES is for definition, DATA is for storage.
+
+#### 2) Can a structure store multiple records? (Why?)
+- No, a structure cannot store multiple records because it represents a single logical unit with fixed fields.
+- It can hold only one record at a time.
+- To store multiple records, we use an internal table which is a collection of structures.
+- A structure holds one record; multiple records require an internal table.
