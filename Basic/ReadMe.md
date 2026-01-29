@@ -28,7 +28,7 @@ Steps:
 - Go to ADT (Eclipse)
 - Package → Right click → New → Data Definition
 - Name: Z_I_MATERIAL_BASIC
-  - Paste below code:
+- Paste below code:
 
 ``` abap
 @AbapCatalog.sqlViewName: 'ZMATBASIC'
@@ -47,3 +47,40 @@ define view Z_I_MATERIAL_BASIC
 - Activate
 - Right click → Data Preview
 
+## What is a Key Field in CDS?
+- A key field uniquely identifies each record (row) in your CDS View. E.g.<b> key matnr. </b>
+- that means, Material Number is the main identifier for each row.
+
+## Why do we used key 
+- Helps SAP understand unique records
+- Important for:
+  - Associations
+  - Analytics
+  - OData & Fiori apps
+- Improves performance & correctness
+
+## What is an Alias?
+ - Alias = Giving a new readable name to a field.
+ - Instead of: `matnr`
+ - You can write: `matnr as MaterialNumber`
+ - Now CDS output column name becomes: `MaterialNumber`
+   
+## Why Use Aliases?
+- Makes fields readable
+- Better for OData & Fiori
+- Avoid conflicts when joining tables
+- Example,
+  ``` abap
+  @AbapCatalog.sqlViewName: 'ZMAT01'
+  @EndUserText.label: 'Material Basic CDS'
+  @AccessControl.authorizationCheck: #NOT_REQUIRED
+
+  define view Z_I_MATERIAL_BASIC
+  as select from mara
+  {
+  key matnr  as MaterialNumber,
+      mtart  as MaterialType,
+      matkl  as MaterialGroup,
+      ersda  as CreatedOn
+  }
+```
